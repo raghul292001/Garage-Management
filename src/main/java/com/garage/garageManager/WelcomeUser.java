@@ -12,7 +12,7 @@ public class WelcomeUser {
 
     @GetMapping("/appStatus")
     public String checkApplicationStatus(){
-        return "yes it is running";
+        return "yea it is running";
     }
 
 }
