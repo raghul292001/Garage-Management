@@ -1,11 +1,10 @@
-package com.garage.garageManager;
+package com.garage.garageManager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.yaml.snakeyaml.scanner.Constant;
 
-@Controller
 @RestController
 public class WelcomeUser {
 
@@ -14,5 +13,6 @@ public class WelcomeUser {
     public String checkApplicationStatus(){
         return "yea it is running";
     }
+
 
 }
