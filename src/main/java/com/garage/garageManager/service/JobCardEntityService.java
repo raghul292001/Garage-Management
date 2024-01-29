@@ -17,9 +17,9 @@ public class JobCardEntityService {
 
 
     private final JobCardEntityDao jobCardEntityDao;
-    public void saveOrUpdateJobCardDetails(JobCardEntity jobCardEntity){
+    public JobCardEntity saveOrUpdateJobCardDetails(JobCardEntity jobCardEntity){
         log.info("Inserting Job card details");
-         jobCardEntityDao.save(jobCardEntity);
+         return jobCardEntityDao.save(jobCardEntity);
     }
 
     public List<JobCardEntity> getAllJobCardEntity(){
