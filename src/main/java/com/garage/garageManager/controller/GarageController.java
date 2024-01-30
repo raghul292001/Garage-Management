@@ -1,5 +1,6 @@
 package com.garage.garageManager.controller;
 
+import com.garage.garageManager.customResponse.ResponseHandler;
 import com.garage.garageManager.entity.JobCardEntity;
 import com.garage.garageManager.service.JobCardEntityService;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +19,14 @@ public class GarageController {
     @Autowired
     JobCardEntityService jobCardEntityService;
     @PostMapping("/saveOrUpdate")
-    public ResponseEntity<JobCardEntity> saveOrUpdate(@RequestBody JobCardEntity jobCardEntity){
+    public ResponseEntity<Object> saveOrUpdate(@RequestBody JobCardEntity jobCardEntity){
         jobCardEntity = jobCardEntityService.saveOrUpdateJobCardDetails(jobCardEntity);
-        return new ResponseEntity<>(jobCardEntity,HttpStatus.OK);
+        return ResponseHandler.responseBuilder("Job card created successfully",true,HttpStatus.OK,jobCardEntity);
     }
 
     @GetMapping("/findAllJobcardDetails")
-    public ResponseEntity<List<JobCardEntity>> findAllJobcardDetails(){
+    public ResponseEntity<Object> findAllJobcardDetails(){
         List<JobCardEntity>jobCardEntities = jobCardEntityService.getAllJobCardEntity();
-        return new ResponseEntity<>(jobCardEntities,HttpStatus.OK);
+        return ResponseHandler.responseBuilder("Job Card details fetched successfully",true,HttpStatus.OK,jobCardEntities);
     }
 }
