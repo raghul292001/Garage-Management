@@ -1,10 +1,11 @@
 package com.garage.garageManager.service;
 
-import com.garage.garageManager.dao.JobCardEntityDao;
-import com.garage.garageManager.entity.JobCardEntity;
+import com.garage.garageManager.repository.dao.JobCardEntityDao;
+import com.garage.garageManager.repository.entity.JobCardEntity;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +16,8 @@ import java.util.List;
 @Slf4j
 public class JobCardEntityService {
 
-
-    private final JobCardEntityDao jobCardEntityDao;
+    @Autowired
+    JobCardEntityDao jobCardEntityDao;
     public JobCardEntity saveOrUpdateJobCardDetails(JobCardEntity jobCardEntity){
         log.info("Inserting Job card details");
          return jobCardEntityDao.save(jobCardEntity);

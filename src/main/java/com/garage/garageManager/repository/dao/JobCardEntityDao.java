@@ -1,6 +1,6 @@
-package com.garage.garageManager.dao;
+package com.garage.garageManager.repository.dao;
 
-import com.garage.garageManager.entity.JobCardEntity;
+import com.garage.garageManager.repository.entity.JobCardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

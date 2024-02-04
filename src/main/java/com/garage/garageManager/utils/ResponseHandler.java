@@ -1,6 +1,6 @@
-package com.garage.garageManager.customResponse;
+package com.garage.garageManager.utils;
 
-import com.garage.garageManager.entity.JobCardEntity;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

@@ -1,7 +1,8 @@
 package com.garage.garageManager.controller;
 
-import com.garage.garageManager.customResponse.ResponseHandler;
-import com.garage.garageManager.entity.JobCardEntity;
+import com.garage.garageManager.business.GarageBusiness;
+import com.garage.garageManager.utils.ResponseHandler;
+import com.garage.garageManager.repository.entity.JobCardEntity;
 import com.garage.garageManager.service.JobCardEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,14 @@ public class GarageController {
 
     @Autowired
     JobCardEntityService jobCardEntityService;
+    @Autowired
+    GarageBusiness garageBusiness;
+
     @PostMapping("/saveOrUpdate")
-    public ResponseEntity<Object> saveOrUpdate(@RequestBody JobCardEntity jobCardEntity){
+    public ResponseEntity<Object> saveOrUpdate(@RequestBody String requestJson) {
+        JobCardEntity jobCardEntity = garageBusiness.saveJobCardDetails(requestJson);
         jobCardEntity = jobCardEntityService.saveOrUpdateJobCardDetails(jobCardEntity);
-        return ResponseHandler.responseBuilder("Job card created successfully",true,HttpStatus.OK,jobCardEntity);
+        return ResponseHandler.responseBuilder("Job card created successfully", true, HttpStatus.OK, jobCardEntity);
     }
 
     @GetMapping("/findAllJobcardDetails")
