@@ -1,9 +1,11 @@
 package com.garage.garageManager.repository.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+
 
 @Entity
 @Table(name = "VEHICLE_DETAILS")
@@ -17,12 +19,14 @@ public class VehicleDetailsEntity {
     int id;
 
     @Column(name = "LICENSE_PLATE")
-    int licensePlate;
+    String licensePlate;
 
     @Column(name = "CAR_NAME")
     String carName;
 
     @Column(name = "YEAR")
     int year;
+
+
 
 }

@@ -23,9 +23,9 @@ public class CustomerDetailsService {
 
     private CustomerDetailsEntity customerDetailsEntity = new CustomerDetailsEntity();
 
-    public CustomerDetailsEntity saveCustomerDetails(String customerDetailsJsonString){
+    public void saveCustomerDetails(String customerDetailsJsonString){
         customerDetailsEntity = jsonToObjectMapperCustomerDetailsEntity(customerDetailsJsonString);
-        return customerDetailsDao.save(customerDetailsEntity);
+        customerDetailsDao.save(customerDetailsEntity);
     }
 
     public CustomerDetailsEntity saveOrUpdate(CustomerDetailsEntity customerDetailsJsonString){

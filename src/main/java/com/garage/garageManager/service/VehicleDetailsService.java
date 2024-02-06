@@ -2,8 +2,8 @@ package com.garage.garageManager.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.garage.garageManager.repository.dao.VehicleDetailsDao;
-import com.garage.garageManager.repository.entity.CustomerDetailsEntity;
 import com.garage.garageManager.repository.entity.VehicleDetailsEntity;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -23,9 +23,9 @@ public class VehicleDetailsService {
 
     private VehicleDetailsEntity vehicleDetailsEntity = new VehicleDetailsEntity();
 
-    public VehicleDetailsEntity saveVehicleDetails(String vehicleDetailsJsonString){
+    public void saveVehicleDetails(String vehicleDetailsJsonString){
         vehicleDetailsEntity= jsonToObjectMapperVehicleDetailsEntity(vehicleDetailsJsonString);
-        return vehicleDetailsDao.save(vehicleDetailsEntity);
+        vehicleDetailsDao.save(vehicleDetailsEntity);
     }
 
     private VehicleDetailsEntity jsonToObjectMapperVehicleDetailsEntity(String jsonSting ){

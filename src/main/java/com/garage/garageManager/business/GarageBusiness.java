@@ -3,6 +3,7 @@ package com.garage.garageManager.business;
 
 import com.garage.garageManager.repository.entity.JobCardEntity;
 import com.garage.garageManager.service.CustomerDetailsService;
+import com.garage.garageManager.service.ServiceDetailsService;
 import com.garage.garageManager.service.VehicleDetailsService;
 import com.garage.garageManager.utils.Constants;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,9 @@ public class GarageBusiness {
 
     @Autowired
     VehicleDetailsService vehicleDetailsService;
+
+    @Autowired
+    ServiceDetailsService serviceDetailsService;
 
 
     public JobCardEntity  saveJobCardDetails(String jobCardEntity){
@@ -64,9 +68,7 @@ public class GarageBusiness {
             vehicleDetails = jobCardData.get("vehicleDetails").toString();
             jobCardData.remove("vehicleDetails");
             vehicleDetailsService.saveVehicleDetails(vehicleDetails);
-
         }
-
     }
 
     private void saveServiceDetails(JSONObject jobCardData){
@@ -74,9 +76,8 @@ public class GarageBusiness {
         if(jobCardData.has("serviceDetails")) {
             serviceDetails = jobCardData.get("serviceDetails").toString();
             jobCardData.remove("serviceDetails");
-
+            serviceDetailsService.saveServiceDetails(serviceDetails);
         }
-
     }
 
     private void saveEmployeeAssignedDetails(String employeeAssigned){

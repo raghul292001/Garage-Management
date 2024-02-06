@@ -25,7 +25,22 @@ public class CustomerDetailsEntity {
     @Column(name = "MOBILE_NUMBER")
     String mobileNumber;
 
-    @Column(name = "ADDRESS")
-    String address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    Address address;
 
+    @Data
+    @Entity
+    @Table(name = "address")
+    public static class Address {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String street;
+        private String city;
+
+        @Column(name = "zip_code")
+        private String zipCode;
+    }
 }
