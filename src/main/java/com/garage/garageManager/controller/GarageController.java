@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin(maxAge = 3600)
 @RestController
 @RequiredArgsConstructor
@@ -24,14 +25,18 @@ public class GarageController {
 
     @PostMapping("/saveOrUpdate")
     public ResponseEntity<Object> saveOrUpdate(@RequestBody String requestJson) {
-        JobCardEntity jobCardEntity = garageBusiness.saveJobCardDetails(requestJson);
-        jobCardEntity = jobCardEntityService.saveOrUpdateJobCardDetails(jobCardEntity);
-        return ResponseHandler.responseBuilder("Job card created successfully", true, HttpStatus.OK, jobCardEntity);
+        try {
+            garageBusiness.saveJobCardDetails(requestJson);
+            //jobCardEntity = jobCardEntityService.saveOrUpdateJobCardDetails(jobCardEntity);
+            return ResponseHandler.responseBuilder("Job card created successfully", true, HttpStatus.OK, "");
+        } catch (Exception exception) {
+            return ResponseHandler.responseBuilder("Job card created Failed", true, HttpStatus.EXPECTATION_FAILED, exception.getMessage());
+        }
     }
 
     @GetMapping("/findAllJobcardDetails")
-    public ResponseEntity<Object> findAllJobcardDetails(){
-        List<JobCardEntity>jobCardEntities = jobCardEntityService.getAllJobCardEntity();
-        return ResponseHandler.responseBuilder("Job Card details fetched successfully",true,HttpStatus.OK,jobCardEntities);
+    public ResponseEntity<Object> findAllJobcardDetails() {
+        List<JobCardEntity> jobCardEntities = jobCardEntityService.getAllJobCardEntity();
+        return ResponseHandler.responseBuilder("Job Card details fetched successfully", true, HttpStatus.OK, jobCardEntities);
     }
 }

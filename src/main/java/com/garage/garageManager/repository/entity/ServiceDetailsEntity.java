@@ -3,6 +3,7 @@ package com.garage.garageManager.repository.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.garage.garageManager.utils.Constants;
 import jakarta.persistence.*;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -16,9 +17,13 @@ import java.time.LocalDateTime;
 public class ServiceDetailsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SERVICE_ID")
-    int id;
+    Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "JOB_CARD_ID",nullable = false)
+    JobCardEntity jobCardEntity;
 
     @Column(name = "TYPE")
     String type;

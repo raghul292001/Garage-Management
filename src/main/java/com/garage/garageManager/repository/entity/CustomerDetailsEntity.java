@@ -1,6 +1,15 @@
 package com.garage.garageManager.repository.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -12,9 +21,13 @@ import lombok.experimental.FieldDefaults;
 public class CustomerDetailsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID")
-    int id;
+    Long id;
+
+    @ManyToOne
+            @JoinColumn(name = "JOB_CARD_ID",nullable = false)
+    JobCardEntity jobCardEntity;
 
     @Column(name = "CUSTOMER_NAME")
     String name;
@@ -32,15 +45,17 @@ public class CustomerDetailsEntity {
     @Data
     @Entity
     @Table(name = "address")
-    public static class Address {
+    @FieldDefaults(level = AccessLevel.PRIVATE)
+    private static class Address {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        Long id;
 
-        private String street;
-        private String city;
+        String street;
+
+        String city;
 
         @Column(name = "zip_code")
-        private String zipCode;
+        String zipCode;
     }
 }

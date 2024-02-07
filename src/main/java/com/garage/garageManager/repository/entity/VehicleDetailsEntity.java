@@ -14,9 +14,13 @@ import lombok.experimental.FieldDefaults;
 public class VehicleDetailsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "VEHICLE_ID")
     int id;
+
+    @ManyToOne
+    @JoinColumn(name = "JOB_CARD_ID",nullable = false)
+    JobCardEntity jobCardEntity;
 
     @Column(name = "LICENSE_PLATE")
     String licensePlate;
@@ -26,6 +30,9 @@ public class VehicleDetailsEntity {
 
     @Column(name = "YEAR")
     int year;
+
+    @Column(name = "CAR_TYPE")
+    String carType;
 
 
 

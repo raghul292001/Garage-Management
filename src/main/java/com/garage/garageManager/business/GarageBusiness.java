@@ -3,6 +3,7 @@ package com.garage.garageManager.business;
 
 import com.garage.garageManager.repository.entity.JobCardEntity;
 import com.garage.garageManager.service.CustomerDetailsService;
+import com.garage.garageManager.service.JobCardEntityService;
 import com.garage.garageManager.service.ServiceDetailsService;
 import com.garage.garageManager.service.VehicleDetailsService;
 import com.garage.garageManager.utils.Constants;
@@ -19,69 +20,70 @@ public class GarageBusiness {
 
     @Autowired
     CustomerDetailsService customerDetailsService;
-
     @Autowired
     VehicleDetailsService vehicleDetailsService;
-
     @Autowired
     ServiceDetailsService serviceDetailsService;
+    @Autowired
+    JobCardEntityService jobCardEntityService;
 
 
-    public JobCardEntity  saveJobCardDetails(String jobCardEntity){
+    public void saveJobCardDetails(String jobCardEntity) throws Exception {
         traverseJsonString(jobCardEntity);
-        return null;
     }
 
-    private void traverseJsonString(String jsonString){
-
-        try{
+    private void traverseJsonString(String jsonString) throws Exception {
+        try {
             JSONObject responseJsonObject = new JSONObject(jsonString);
             JSONArray jsonArray = responseJsonObject.getJSONArray("appointments");
-            for(int index = 0; index < jsonArray.length(); index++){
+            for (int index = 0; index < jsonArray.length(); index++) {
                 JSONObject jobCardData = jsonArray.getJSONObject(index);
                 saveJobCardDetails(jobCardData);
             }
-        }catch (Exception exception){
-            log.error("Error traversing the json string ",jsonString);
+        } catch (Exception exception) {
+            log.error("Error traversing the json string ", jsonString);
         }
 
     }
 
-    private void saveJobCardDetails(JSONObject jobCardData){
-        saveCustomerDetails(jobCardData);
-        saveVehicleDetails(jobCardData);
-        saveServiceDetails(jobCardData);
+    private void saveJobCardDetails(JSONObject jobCardData)throws Exception {
+        String customerDetails = Constants.EMPTY_STRING;
+        String vehicleDetails = Constants.EMPTY_STRING;
+        String serviceDetails = Constants.EMPTY_STRING;
+        customerDetails = saveCustomerDetails(jobCardData);
+        vehicleDetails = saveVehicleDetails(jobCardData);
+        serviceDetails = saveServiceDetails(jobCardData);
+        jobCardEntityService.saveJobCardDetails(jobCardData.toString());
+        customerDetailsService.saveCustomerDetails(customerDetails);
+        vehicleDetailsService.saveVehicleDetails(vehicleDetails);
+        serviceDetailsService.saveServiceDetails(serviceDetails);
+
     }
 
-    private void saveCustomerDetails(JSONObject jobCardData){
+    private String saveCustomerDetails(JSONObject jobCardData) throws Exception {
         String customerDetails = Constants.EMPTY_STRING;
-        if(jobCardData.has("customerDetails")) {
+        if (jobCardData.has("customerDetails")) {
             customerDetails = jobCardData.get("customerDetails").toString();
             jobCardData.remove("customerDetails");
-            customerDetailsService.saveCustomerDetails(customerDetails);
         }
+        return customerDetails;
     }
 
-    private void saveVehicleDetails(JSONObject jobCardData){
+    private String saveVehicleDetails(JSONObject jobCardData)throws Exception {
         String vehicleDetails = Constants.EMPTY_STRING;
-        if(jobCardData.has("vehicleDetails")) {
+        if (jobCardData.has("vehicleDetails")) {
             vehicleDetails = jobCardData.get("vehicleDetails").toString();
             jobCardData.remove("vehicleDetails");
-            vehicleDetailsService.saveVehicleDetails(vehicleDetails);
         }
+        return vehicleDetails;
     }
 
-    private void saveServiceDetails(JSONObject jobCardData){
+    private String saveServiceDetails(JSONObject jobCardData) throws Exception {
         String serviceDetails = Constants.EMPTY_STRING;
-        if(jobCardData.has("serviceDetails")) {
+        if (jobCardData.has("serviceDetails")) {
             serviceDetails = jobCardData.get("serviceDetails").toString();
             jobCardData.remove("serviceDetails");
-            serviceDetailsService.saveServiceDetails(serviceDetails);
         }
+        return serviceDetails;
     }
-
-    private void saveEmployeeAssignedDetails(String employeeAssigned){
-
-    }
-
 }

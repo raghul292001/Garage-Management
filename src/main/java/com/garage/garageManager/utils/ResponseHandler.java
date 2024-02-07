@@ -10,12 +10,13 @@ import java.util.Map;
 public class ResponseHandler {
 
     public static ResponseEntity<Object> responseBuilder(String message, boolean result, HttpStatus httpStatus,
-                                                         Object jobCardEntity) {
+                                                         Object response) {
         Map<String, Object> responceMap = new HashMap<>();
         responceMap.put("message", message);
         responceMap.put("result", result);
         responceMap.put("httpStatus", httpStatus);
-        responceMap.put("data", jobCardEntity);
-        return new ResponseEntity<Object>(responceMap,httpStatus);
+        if (response != null && !response.equals(""))
+            responceMap.put("response", response);
+        return new ResponseEntity<Object>(responceMap, httpStatus);
     }
 }

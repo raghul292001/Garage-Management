@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb44cca0-3c68-4ddb-aa59-70f5d0b61893" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/controller/GarageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/controller/GarageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/CustomerDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/CustomerDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/JobCardEntityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/JobCardEntityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/ServiceDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/ServiceDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/VehicleDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/dao/VehicleDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/CustomerDetailsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/CustomerDetailsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/JobCardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/JobCardEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/ServiceDetailsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/ServiceDetailsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/VehicleDetailsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/repository/entity/VehicleDetailsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/CustomerDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/CustomerDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/JobCardEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/JobCardEntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/utils/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/garage/garageManager/utils/ResponseHandler.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ba4dx5L1ZMrPj0ouZxKXUlaYrq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GarageManagerApplication.executor": "Run",
+    "Maven.mvn clean install.executor": "Run",
+    "Maven.mvn skip test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "development",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/My Folder/Project/garageManager",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "terminal"
+  }
+}]]></component>
+  <component name="RunManager" selected="Maven.mvn clean install">
+    <configuration name="GarageManagerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.garage.garageManager.GarageManagerApplication" />
+      <module name="garageManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.garage.garageManager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mvn clean install" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="mvn skip test" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="-DskipTests" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.GarageManagerApplication" />
+      <item itemvalue="Maven.mvn clean install" />
+      <item itemvalue="Maven.mvn skip test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GarageManagerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb44cca0-3c68-4ddb-aa59-70f5d0b61893" name="Changes" comment="" />
+      <created>1706439946777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706439946777</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/controller/GarageController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/CustomerDetailsService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/ServiceDetailsService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/ServiceDetailsService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/business/GarageBusiness.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/JobCardEntityService.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/JobCardEntityService.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/garage/garageManager/service/JobCardEntityService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

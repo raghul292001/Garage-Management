@@ -23,9 +23,13 @@ public class CustomerDetailsService {
 
     private CustomerDetailsEntity customerDetailsEntity = new CustomerDetailsEntity();
 
-    public void saveCustomerDetails(String customerDetailsJsonString){
-        customerDetailsEntity = jsonToObjectMapperCustomerDetailsEntity(customerDetailsJsonString);
-        customerDetailsDao.save(customerDetailsEntity);
+    public void saveCustomerDetails(String customerDetailsJsonString) {
+        try {
+            customerDetailsEntity = jsonToObjectMapperCustomerDetailsEntity(customerDetailsJsonString);
+            customerDetailsDao.save(customerDetailsEntity);
+        } catch (Exception exception) {
+            log.error(exception.getMessage());
+        }
     }
 
     public CustomerDetailsEntity saveOrUpdate(CustomerDetailsEntity customerDetailsJsonString){
